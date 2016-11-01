@@ -13,6 +13,12 @@ angular.module('AuthApp', [ 'ui.router' ] )
 				templateUrl: './views/login/login.html',
 				controller: 'LoginController',
 				controllerAs: 'loginCtrl'
+			} )
+			.state( 'Me', {
+				url: '/me',
+				templateUrl: './views/me/me.html',
+				controller: 'MeController',
+				controllerAs: 'meCtrl'
 			} );
 
 	} );

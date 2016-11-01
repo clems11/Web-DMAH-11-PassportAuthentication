@@ -8,6 +8,8 @@ const express = require( `express` );
 const mongoose = require( `mongoose` );
 const bodyParser = require( `body-parser` );
 const session = require( `express-session` );
+const passport = require( `passport` );
+const FacebookStrategy = require('passport-facebook').Strategy;
 
 
 
@@ -34,6 +36,8 @@ app.use( express.static( __dirname + '/../node_modules' ) );
 app.use( bodyParser.json( { limit: '50mb' } ) );
 app.use( bodyParser.urlencoded( { limit: '50mb', extended: true } ) );
 app.use( session( config.session ) );
+app.use( passport.initialize() );
+app.use( passport.session() );
 
 
 
@@ -45,7 +49,9 @@ app.use( session( config.session ) );
   #PASSPORT
 \*------------------------------------*/
 
-// PASSPORT CODE GOES HERE
+passport.use( new FacebookStrategy( config.facebook, function( token, refreshToken, profile, done ) {
+  return done( null, profile );
+} ) );
 
 
 
@@ -68,7 +74,30 @@ mongoose.connect( 'mongodb://localhost:27017/PassportAuth', ( err, res ) => {
   #ROUTES
 \*------------------------------------*/
 
-// require( './masterRoutes.js' )( app );
+app.get( '/auth/facebook', passport.authenticate( 'facebook' ) );
+
+app.get( '/auth/facebook/callback', passport.authenticate( 'facebook', {
+	successRedirect: '/#/me',
+	failureRedirect: '/'
+} ) );
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+  done(null, obj);
+});
+
+app.get( '/logout', function( req, res ) {
+	req.logout();
+	res.redirect( '/' );
+} );
+
+app.get( '/api/user', function( req, res ) {
+	console.log( req.user );
+	return res.json( req.user )
+} );
 
 
 

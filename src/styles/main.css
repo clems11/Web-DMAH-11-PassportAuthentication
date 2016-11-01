@@ -17,7 +17,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+	background-image: linear-gradient(to bottom right,#BFE6BA,#D3959B);
 	opacity: .6;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .login-wrapper > .login-container > .login-title > h1 {
-	font-family: 'Ropa Sans', Helvetica, sans-serif;
+	font-family: 'Pragati Narrow', Helvetica, sans-serif;
 	color: beige;
 	font-size: 2rem;
 }
@@ -46,24 +46,94 @@
 	margin: 2rem auto;
 }
 
-.login-wrapper > .login-container > .login-facebook > button {
+.login-wrapper > .login-container > .login-facebook > a > button {
 	width: 20rem;
 	height: 4rem;
 	background: none;
 	border: 0.1rem solid beige;
 	border-radius: 0.2rem;
-	font-family: 'Ropa Sans', Helvetica, sans-serif;
+	font-family: 'Pragati Narrow', Helvetica, sans-serif;
 	font-size: 1rem;
 	color: beige;
 }
 
-.login-wrapper > .login-container > .login-facebook > button:hover {
+.login-wrapper > .login-container > .login-facebook > a > button:hover {
 	background: beige;
 	color: hsla(0, 0%, 20%, 0.8);
 	box-shadow: 0 0 3rem hsla(0, 0%, 20%, 0.5);
 }
 
-.login-wrapper > .login-container > .login-facebook > button:active {
+.login-wrapper > .login-container > .login-facebook > a > button:active {
+	color: hsla(0, 0%, 20%, 0.6);
+	box-shadow: 0 0 1rem hsla(0, 0%, 20%, 0.5);
+}
+
+.me-wrapper {
+	width: 100%;
+	height: 100vh;
+	background-image: url( 'http://hnzyzb.com/data/out/7/44309645-forest-wallpapers.jpg' );
+	background-size: cover;
+	background-repeat: no-repeat;
+  background-blend-mode: overlay;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.me-wrapper:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to bottom right,#649173,#DBD5A4);
+	opacity: .6;
+}
+
+.me-wrapper > .me-container {
+	width: 50rem;
+	height: 30rem;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.me-wrapper > .me-container > .me-title > h2 {
+	font-family: 'Pragati Narrow', Helvetica, sans-serif;
+	font-size: 2rem;
+	color: beige;
+}
+
+.me-wrapper > .me-container > hr {
+	width: 5rem;
+	height: 0.1rem;
+	border: none;
+	color: beige;
+	background-color: beige;
+	margin: 2rem auto;
+}
+
+.me-wrapper > .me-container > .me-facebook > a > button {
+	width: 20rem;
+	height: 4rem;
+	background: none;
+	border: 0.1rem solid beige;
+	border-radius: 0.2rem;
+	font-family: 'Pragati Narrow', Helvetica, sans-serif;
+	font-size: 1rem;
+	color: beige;
+}
+
+.me-wrapper > .me-container > .me-facebook > a > button:hover {
+	background: beige;
+	color: hsla(0, 0%, 20%, 0.8);
+	box-shadow: 0 0 3rem hsla(0, 0%, 20%, 0.5);
+}
+
+.me-wrapper > .me-container > .me-facebook > a > button:active {
 	color: hsla(0, 0%, 20%, 0.6);
 	box-shadow: 0 0 1rem hsla(0, 0%, 20%, 0.5);
 }
