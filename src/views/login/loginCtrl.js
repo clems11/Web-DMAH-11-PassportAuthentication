@@ -4,6 +4,8 @@ angular.module('AuthApp')
 
 		var vm = this;
 
-		vm.test = 'It works dummy';
+		vm.pressed = function() {
+			alert( 'Logging in!' );
+		};
 
 	} );
